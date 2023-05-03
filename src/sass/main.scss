@@ -1,0 +1,14 @@
+@import './fonts.scss';
+
+$base-color: rgb(225, 120, 134);
+body {
+  background-color: $base-color;
+  font-family: 'woff', sans-serif;
+}
+
+h1 {
+  font-size: 52px;
+  margin: 40px;
+  color: aliceblue;
+  font-family: 'Maderin', sans-serif;
+}
