@@ -3,7 +3,7 @@ on: [push]
 jobs:
   init:
     runs-on: ubuntu-latest 
-    startegy:
+    strategy:
       matrix:
         node-varsion: [ 18.x ]
     steps:
