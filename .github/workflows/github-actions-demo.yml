@@ -5,15 +5,21 @@ jobs:
     runs-on: macos-latest 
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '17'
       - name: install modules
         run: npm install 
       - name: build project
         run: npm run build
-   test:
+  test:
     runs-on: macos-latest 
     needs: build
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '17'
       - name: install modules
         run: npm install 
       - name: test project
