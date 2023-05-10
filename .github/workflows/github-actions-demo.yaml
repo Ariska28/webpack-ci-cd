@@ -7,10 +7,14 @@ jobs:
   build:
     runs-on: macos-latest 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: get rep
+        uses: actions/checkout@v3
+      - name: Cache Primes
+        uses: actions/cache@v3
         with:
-          node-version: '17'
+          path: ~/.npm
+          key: ${{ hashFiles('**/package-lock.json') }}
+
       - name: install modules
         run: npm install 
       - name: build project
