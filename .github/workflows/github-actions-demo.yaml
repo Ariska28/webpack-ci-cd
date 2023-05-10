@@ -6,11 +6,10 @@ on:
     types: [opened, edited, reopened]
 jobs:
   build:
-    runs-on: macos-latest 
-    strategy: 
+    strategy:
       matrix:
-        node-version: [14,16]
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-22.04, ubuntu-20.04]
+        version: [10, 12, 14]
     runs-on: ${{ matrix.os }}
     steps:
       - name: get rep
