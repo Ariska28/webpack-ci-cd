@@ -1,6 +1,7 @@
 name: GitHub Actions Demo
 on: 
   workflow_dispatch:
+  push:
   pull_request:
     types: [opened, edited, reopened]
 jobs:
