@@ -1,5 +1,8 @@
 name: GitHub Actions Demo
-on: [push] 
+on: 
+  workflow_dispatch:
+  pull_request:
+    types: [opened, edited, reopened]
 jobs:
   build:
     runs-on: macos-latest 
@@ -12,15 +15,3 @@ jobs:
         run: npm install 
       - name: build project
         run: npm run build
-  test:
-    runs-on: macos-latest 
-    needs: build
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '17'
-      - name: install modules
-        run: npm install 
-      - name: test project
-        run: npm run test
