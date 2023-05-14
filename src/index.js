@@ -2,3 +2,5 @@
 import test from '@assets/test.jpg';
 import './sass/main'; 
 
+console.log('Hello');
+
