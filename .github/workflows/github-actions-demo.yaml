@@ -24,3 +24,16 @@ jobs:
         run: npm install 
       - name: build project
         run: npm run build
+      - name: Upload Wrifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-fules
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get build project
+        uses: action/download-artifect@v3
+        with: 
+          name: dist-files
