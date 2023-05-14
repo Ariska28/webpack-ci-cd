@@ -27,7 +27,7 @@ jobs:
       - name: Upload Wrifacts
         uses: actions/upload-artifact@v3
         with:
-          name: build-fules
+          name: dist-files
           path: dist
   deploy:
     needs: build
